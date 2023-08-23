@@ -1,0 +1,18 @@
+{
+  "name": "Ubuntu",
+  "image": "mcr.microsoft.com/devcontainers/base:jammy",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "taichi.vscode-textlint",
+        "DavidAnson.vscode-markdownlint",
+        "hediet.vscode-drawio"
+      ],
+      "settings": {}
+    }
+  },
+  "postCreateCommand": "yarn install"
+}
