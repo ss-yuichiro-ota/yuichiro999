@@ -10,4 +10,5 @@ textlint:
   script:
     - yarn install
     - wget -O - -q https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s
-    - yarn textlint -f checkstyle ./articles/ ./books/ | bin/reviewdog -f=checkstyle -name="textlint" -reporter=gitlab-mr-discussion
+    - export PATH=$PATH:/root/.local/bin
+    - yarn textlint -f checkstyle ./articles/ ./books/ | reviewdog -f=checkstyle -name="textlint" -reporter=gitlab-mr-discussion
