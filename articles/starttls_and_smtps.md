@@ -108,50 +108,6 @@ TLSは**強制TLS**と**日和見（ひよりみ）TLS**というのがあり、
 
 STARTTLSは送信先がTLSに対応していなくてもメールを送信可能であるため、日和見TLSということになります。送信先がTLSに対応していなくてもメールを送信できるメリットはありますが、暗号化されていないメールにはセキュリティ上のリスクが発生してしまうのがデメリットと言えるでしょう。
 
-### STARTTLSのサンプルプログラム
-
-Pythonを使用する場合、標準ライブラリの**smtplib**と**MIMEText**を利用することでSMTPを使用してメールを送信するための機能を実装できます。smtplibに**SMTP**というクラスが存在するため、SMTPサーバーに接続するためのオブジェクトを作れます。ただし、前述したとおり、SMTPだけでは暗号化されていないため、処理の途中で**starttlsメソッド**を呼び出し、TLS暗号化モードに切り替える必要があります。
-
-```python
-import os
-from email.mime.text import MIMEText
-from smtplib import SMTP
-from dotenv import load_dotenv
-
-# 例: .env ファイルに以下を記載
-# MAIL_USER=abc@testmail.com
-# MAIL_PASS=xxxx xxxx xxxx xxxx
-# MAIL_TO=someone@example.com
-# SMTP_HOST=smtp.example.com
-
-# .env 読み込み
-load_dotenv()
-
-# "test"というプレーンテキストメールを"UTF-8"で作成
-mail = MIMEText("test", "plain", "utf-8")
-mail["Subject"] = "メールの件名"
-mail["From"] = os.getenv("MAIL_USER", "example@test.com")
-mail["To"] = os.getenv("MAIL_TO")
-mail["Date"] = "メールの日付"  # 省略可
-
-def send_mail(msg: MIMEText):
-    """
-    STARTTLSでメール送信
-    """
-    host: str = os.getenv("SMTP_HOST")   # メール送信サーバーを指定
-    port: int = 587  # STARTTLS用のポート
-    user = os.getenv("MAIL_USER")
-    password = os.getenv("MAIL_PASS")
-
-    with SMTP(host, port) as server:
-        server.starttls()  # TLS 暗号化
-        server.login(user, password)  # ログイン
-        server.send_message(msg)  # メール送信
-
-if __name__ == "__main__":
-    send_mail(mail)
-```
-
 ## 🔒　メールの暗号化「SMTPS」
 
 ### SMTPSの概要
