@@ -68,6 +68,7 @@ SSL/TLSはこのような通信経路上の攻撃（盗聴・改ざん・なり�
 - Outlook.com / Microsoft 365
 - iCloud Mail
 - Yahoo!メール
+- Thundebird
 
 :::
 
