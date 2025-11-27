@@ -3,7 +3,7 @@ title: "Pythonで実装する安全なメール送信：STARTTLS・SMTPSの違�
 emoji: "🐡"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["ssl", "tls", "starttls", "smtps", "python"]
-published: false
+published: true
 published_at: 2025-12-01 06:00
 publication_name: "secondselection"
 ---
