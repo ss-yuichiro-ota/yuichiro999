@@ -4,6 +4,8 @@ emoji: "🤖"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["ros2", "ros", "urdf", "python", "robot"]
 published: false
+published_at: 2026-03-31 06:00
+publication_name: "secondselection"
 ---
 
 ## はじめに
