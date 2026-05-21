@@ -9,8 +9,8 @@ textlint:
   stage: linting
   image: node:latest
   script:
-    - yarn install
+    - npm ci
     - mkdir -p ./bin
     - wget -O - -q https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s -- -b ./bin
-    - yarn textlint -f checkstyle ./articles/ ./books/ | bin/reviewdog -f=checkstyle -name="textlint" -reporter=gitlab-mr-discussion
+    - npx textlint -f checkstyle ./articles/ ./books/ | bin/reviewdog -f=checkstyle -name="textlint" -reporter=gitlab-mr-discussion
 
