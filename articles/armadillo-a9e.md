@@ -65,12 +65,13 @@ DebianベースのVM上にクロスコンパイル環境が整っており、Arm
 
 - Armadillo-A9E本体
 - microSDカード（初期インストールディスク書き込み用）
-- USB Type-A - Type-Cケーブル（1）
-- LANケーブル（2）
-- 電源ケーブル（3）
+- USB Type-A - Type-Cケーブル - ➀
+- LANケーブル - ➁
+- 電源ケーブル - ➂
+- DIPスイッチ（ArmadilloA9E搭載）- ➃
 - ATDE環境（VSCodeおよびABOSDEインストール済み）
 
-![接続構成](/images/armadillo-a9e/system.png)
+![接続構成](/images/armadillo-a9e/system.drawio.png)
 
 ### 初期インストールの実施
 
@@ -86,7 +87,7 @@ DebianベースのVM上にクロスコンパイル環境が整っており、Arm
 4. DIPスイッチを元の設定に戻し、microSDカードを取り外します。
 5. 再度電源ケーブルを差し込み、Armadilloが起動すれば初期インストール完了となります。
 
-![SDブート時](/images/armadillo-a9e/sd_install1.png)
+![SDブート時](/images/armadillo-a9e/sd_install1.drawio.png)
 
 ### ABOS Webにアクセスする
 
@@ -117,6 +118,10 @@ ABOS Webでは以下の操作が行えます。
 ネットワーク設定でIPアドレスを固定しておくと次回以降は`https://<設定したIPアドレス>:58080`でABOS Webにアクセスできます。
 
 :::
+
+## ATDE環境内のVSCode上での操作方法について
+
+**※ 以降の手順は、ATDE環境内にインストールされたVSCode上での操作を前提とします。**
 
 ### 拡張機能ABOSDEのインストール
 
@@ -370,8 +375,9 @@ ABOSDE EXPLORER：
 
 `development.swu`のインストールは`initial_setup.swu`と同じ手順で実施します。
 ABOSDE EXPLORERのMONITORの矢印アイコンまたはABOS Web上でswuファイルをインストールします。
+インストール後、自動的に再起動され、アプリケーションが起動します。
 
-### アプリの動作確認
+## アプリの動作確認
 
 PCのブラウザのURL入力欄に「http://<ArmadilloのIPアドレス>:5000」と入力すると、`Hello, Armadillo A9E`と表示されることを確認できます。
 
