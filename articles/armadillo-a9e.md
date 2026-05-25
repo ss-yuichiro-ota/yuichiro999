@@ -2,7 +2,7 @@
 title: "Armadillo A9E の開発手順と Flask サーバー構築"
 emoji: "🦔"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["armadillo", "flask", "python", "組み込みlinux", "iot"]
+topics: ["armadillo", "flask", "python", "Linux", "iot", "armadilloa9e",]
 published: false
 published_at: 2025-05-27 09:00
 publication_name: "secondselection"
