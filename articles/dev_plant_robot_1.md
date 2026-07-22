@@ -3,7 +3,7 @@ title: "第1回：植物は何を感じているのか、AIで植物に声と感
 emoji: "🌱"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["robot", "openclaw", "ros2", "iot", "reactnative",]
-published: false
+published: true
 published_at: 2026-07-27 06:00
 publication_name: "secondselection"
 ---
